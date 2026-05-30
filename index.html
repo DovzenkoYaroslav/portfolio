@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Довженко Ярослав | React Native Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .gradient-text {
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .skill-card:hover { transform: translateY(-5px); transition: all 0.3s; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-200">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="text-xl font-bold gradient-text">Ярослав Д.</span>
+            <div class="space-x-6 hidden md:block text-sm font-medium">
+                <a href="#about" class="hover:text-blue-400 transition">Обо мне</a>
+                <a href="#skills" class="hover:text-blue-400 transition">Навыки</a>
+                <a href="#projects" class="hover:text-blue-400 transition">Проекты</a>
+                <a href="#contact" class="hover:text-blue-400 transition">Контакты</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4">ДОВЖЕНКО <span class="gradient-text">ЯРОСЛАВ</span></h1>
+            <p class="text-xl md:text-2xl text-slate-400 mb-8 font-light italic">Mobile Developer (React Native)</p>
+            <div class="flex justify-center gap-4 flex-wrap">
+                <a href="https://t.me/xenohunterknife" target="_blank" class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full font-semibold transition">
+                    <i data-lucide="send" class="w-5 h-5"></i> Telegram
+                </a>
+                <a href="mailto:dovzenkoya@gmail.com" class="flex items-center gap-2 border border-slate-700 hover:bg-slate-800 px-6 py-3 rounded-full font-semibold transition">
+                    <i data-lucide="mail" class="w-5 h-5"></i> Почта
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-slate-800/50">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+                <i data-lucide="user" class="text-blue-400"></i> Обо мне
+            </h2>
+            <p class="text-lg text-slate-300 leading-relaxed">
+                Начинающий мобильный разработчик со специализацией на кроссплатформенных приложениях (React Native). 
+                Имею опыт Fullstack разработки: от проектирования архитектуры и базы данных до создания UI и внедрения Backend-логики. 
+                Умею превращать бизнес-задачи в работающий код. Увлекаюсь современными технологиями, пишу чистый и поддерживаемый код.
+            </p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">Технические навыки</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Group 1 -->
+                <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 skill-card">
+                    <i data-lucide="code-2" class="text-blue-400 mb-4"></i>
+                    <h3 class="font-bold mb-2">Языки</h3>
+                    <p class="text-sm text-slate-400">JavaScript, TypeScript, Kotlin</p>
+                </div>
+                <!-- Group 2 -->
+                <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 skill-card">
+                    <i data-lucide="smartphone" class="text-purple-400 mb-4"></i>
+                    <h3 class="font-bold mb-2">Mobile & Frontend</h3>
+                    <p class="text-sm text-slate-400">React Native, Expo, React, Tailwind, HTML5, CSS3</p>
+                </div>
+                <!-- Group 3 -->
+                <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 skill-card">
+                    <i data-lucide="server" class="text-green-400 mb-4"></i>
+                    <h3 class="font-bold mb-2">Backend & DB</h3>
+                    <p class="text-sm text-slate-400">Node.js, Express, MongoDB, SQL, REST API</p>
+                </div>
+                <!-- Group 4 -->
+                <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 skill-card">
+                    <i data-lucide="wrench" class="text-orange-400 mb-4"></i>
+                    <h3 class="font-bold mb-2">Инструменты</h3>
+                    <p class="text-sm text-slate-400">Git, VS Code, Android Studio, LLM, OOP/SOLID</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-slate-800/50">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12">Опыт реализации проектов</h2>
+            
+            <div class="bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden shadow-xl">
+                <div class="p-8">
+                    <div class="flex flex-wrap justify-between items-start mb-6 gap-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Проект «XFIT» (Система автоматизации)</h3>
+                            <p class="text-blue-400">Fullstack Mobile Developer</p>
+                        </div>
+                        <span class="bg-slate-800 text-slate-300 px-4 py-1 rounded-full text-sm border border-slate-700">
+                            Ноябрь 2025 — Февраль 2026
+                        </span>
+                    </div>
+                    
+                    <ul class="space-y-3 text-slate-400 mb-8">
+                        <li class="flex gap-3"><i data-lucide="check-circle-2" class="text-green-500 shrink-0"></i> Разработал кроссплатформенное мобильное приложение на React Native + Expo.</li>
+                        <li class="flex gap-3"><i data-lucide="check-circle-2" class="text-green-500 shrink-0"></i> Спроектировал и реализовал Backend на Node.js (Express).</li>
+                        <li class="flex gap-3"><i data-lucide="check-circle-2" class="text-green-500 shrink-0"></i> Настроил хранение данных в MongoDB (Mongoose).</li>
+                        <li class="flex gap-3"><i data-lucide="check-circle-2" class="text-green-500 shrink-0"></i> Сократил время отклика на 40% за счет мгновенных уведомлений.</li>
+                    </ul>
+                    
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-900/30 text-blue-400 px-3 py-1 rounded-md text-xs font-medium border border-blue-800/50">React Native</span>
+                        <span class="bg-blue-900/30 text-blue-400 px-3 py-1 rounded-md text-xs font-medium border border-blue-800/50">Node.js</span>
+                        <span class="bg-blue-900/30 text-blue-400 px-3 py-1 rounded-md text-xs font-medium border border-blue-800/50">MongoDB</span>
+                        <span class="bg-blue-900/30 text-blue-400 px-3 py-1 rounded-md text-xs font-medium border border-blue-800/50">Expo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Languages -->
+    <section class="py-20">
+        <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+            <div>
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                    <i data-lucide="graduation-cap" class="text-blue-400"></i> Образование
+                </h2>
+                <div class="border-l-2 border-slate-700 pl-6">
+                    <p class="font-bold text-white uppercase tracking-wider text-sm">Окончание: 2026</p>
+                    <p class="text-lg mt-1 font-semibold">Информационные системы и программирование</p>
+                    <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+                        ГБПОУ «Колледж автоматизации и информационных технологий № 20», г. Москва
+                    </p>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                    <i data-lucide="languages" class="text-blue-400"></i> Языки
+                </h2>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span>Русский</span>
+                        <span class="text-blue-400 font-bold">Родной</span>
+                    </div>
+                    <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-blue-500 h-full w-full"></div>
+                    </div>
+                    <div class="flex justify-between items-center mt-4">
+                        <span>Английский</span>
+                        <span class="text-blue-400 font-bold">A2 (Pre-Intermediate)</span>
+                    </div>
+                    <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-blue-500 h-full w-[40%]"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Footer -->
+    <footer id="contact" class="py-20 border-t border-slate-800 text-center">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-4 italic">Свяжитесь со мной</h2>
+            <p class="text-slate-400 mb-8">Готов к удаленной работе и новым интересным вызовам</p>
+            
+            <div class="flex flex-col items-center gap-4 text-lg">
+                <a href="tel:+79651883852" class="hover:text-blue-400 transition flex items-center gap-2">
+                    <i data-lucide="phone" class="w-5 h-5 text-blue-500"></i> +7 (965) 188-38-52
+                </a>
+                <p class="flex items-center gap-2">
+                    <i data-lucide="map-pin" class="w-5 h-5 text-blue-500"></i> Витебск / Удаленно
+                </p>
+            </div>
+            
+            <p class="mt-20 text-xs text-slate-500 uppercase tracking-widest">
+                &copy; 2024 Dovzhenko Yaroslav. Built with React Native Spirit.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
