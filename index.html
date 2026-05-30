@@ -15,9 +15,23 @@
             -webkit-text-fill-color: transparent;
         }
         .skill-card:hover { transform: translateY(-5px); transition: all 0.3s; }
+        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 100; align-items: center; justify-content: center; backdrop-filter: blur(5px); }
+        .modal.active { display: flex; }
     </style>
 </head>
 <body class="bg-slate-900 text-slate-200">
+
+    <!-- Modals -->
+    <div id="contactModal" class="modal" onclick="closeModal()">
+        <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700 max-w-sm w-full mx-4 text-center shadow-2xl" onclick="event.stopPropagation()">
+            <div id="modalIcon" class="mb-4 flex justify-center text-blue-400"></div>
+            <h3 id="modalTitle" class="text-xl font-bold mb-2"></h3>
+            <p id="modalValue" class="text-lg text-slate-300 mb-6 break-all font-mono bg-slate-900 p-3 rounded-lg"></p>
+            <button onclick="copyModalValue()" class="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded-xl font-bold transition flex items-center justify-center gap-2">
+                <i data-lucide="copy" class="w-4 h-4"></i> Копировать
+            </button>
+        </div>
+    </div>
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
@@ -35,15 +49,29 @@
     <!-- Hero Section -->
     <section class="pt-32 pb-20 px-6">
         <div class="max-w-5xl mx-auto text-center">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-4">ДОВЖЕНКО <span class="gradient-text">ЯРОСЛАВ</span></h1>
+            <!-- Photo placeholder -->
+            <div class="mb-8 flex justify-center">
+                <div class="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-blue-500/30 overflow-hidden shadow-2xl">
+                    <!-- Замени portfoliophoto.jpg на свое расширение, если нужно -->
+                    <img src="portfoliophoto.jpg" alt="Ярослав Довженко" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=Yaroslav+Dovzhenko&background=1e293b&color=60a5fa&size=256'">
+                </div>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 uppercase tracking-tight text-white">ДОВЖЕНКО ЯРОСЛАВ</h1>
             <p class="text-xl md:text-2xl text-slate-400 mb-8 font-light italic">Mobile Developer (React Native)</p>
+            
+            <div class="flex flex-col items-center gap-2 mb-8 text-slate-300">
+                <div class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-blue-500"></i> +7 965 188-38-52</div>
+                <div class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-blue-500"></i> +375 25 522 51 28</div>
+            </div>
+
             <div class="flex justify-center gap-4 flex-wrap">
-                <a href="https://t.me/xenohunterknife" target="_blank" class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full font-semibold transition">
+                <button onclick="openModal('Telegram', '@xenohunterknife', 'send')" class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full font-semibold transition">
                     <i data-lucide="send" class="w-5 h-5"></i> Telegram
-                </a>
-                <a href="mailto:dovzenkoya@gmail.com" class="flex items-center gap-2 border border-slate-700 hover:bg-slate-800 px-6 py-3 rounded-full font-semibold transition">
+                </button>
+                <button onclick="openModal('Email', 'dovzenkoya@gmail.com', 'mail')" class="flex items-center gap-2 border border-slate-700 hover:bg-slate-800 px-6 py-3 rounded-full font-semibold transition text-white">
                     <i data-lucide="mail" class="w-5 h-5"></i> Почта
-                </a>
+                </button>
             </div>
         </div>
     </section>
@@ -51,8 +79,8 @@
     <!-- About Section -->
     <section id="about" class="py-20 bg-slate-800/50">
         <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
-                <i data-lucide="user" class="text-blue-400"></i> Обо мне
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3 italic">
+                <i data-lucide="user" class="text-blue-400"></i> ОБО МНЕ
             </h2>
             <p class="text-lg text-slate-300 leading-relaxed">
                 Начинающий мобильный разработчик со специализацией на кроссплатформенных приложениях (React Native). 
@@ -65,32 +93,28 @@
     <!-- Skills Section -->
     <section id="skills" class="py-20">
         <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 text-center">Технические навыки</h2>
+            <h2 class="text-3xl font-bold mb-12 text-center italic uppercase">Технические навыки</h2>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Group 1 -->
-                <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 skill-card">
-                    <i data-lucide="code-2" class="text-blue-400 mb-4"></i>
+                <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 skill-card text-center">
+                    <i data-lucide="code-2" class="text-blue-400 mb-4 mx-auto"></i>
                     <h3 class="font-bold mb-2">Языки</h3>
-                    <p class="text-sm text-slate-400">JavaScript, TypeScript, Kotlin</p>
+                    <p class="text-sm text-slate-400 font-medium">JavaScript, TypeScript, Kotlin</p>
                 </div>
-                <!-- Group 2 -->
-                <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 skill-card">
-                    <i data-lucide="smartphone" class="text-purple-400 mb-4"></i>
+                <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 skill-card text-center">
+                    <i data-lucide="smartphone" class="text-purple-400 mb-4 mx-auto"></i>
                     <h3 class="font-bold mb-2">Mobile & Frontend</h3>
-                    <p class="text-sm text-slate-400">React Native, Expo, React, Tailwind, HTML5, CSS3</p>
+                    <p class="text-sm text-slate-400 font-medium">React Native, Expo, React, Tailwind, HTML5, CSS3</p>
                 </div>
-                <!-- Group 3 -->
-                <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 skill-card">
-                    <i data-lucide="server" class="text-green-400 mb-4"></i>
+                <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 skill-card text-center">
+                    <i data-lucide="server" class="text-green-400 mb-4 mx-auto"></i>
                     <h3 class="font-bold mb-2">Backend & DB</h3>
-                    <p class="text-sm text-slate-400">Node.js, Express, MongoDB, SQL, REST API</p>
+                    <p class="text-sm text-slate-400 font-medium">Node.js, Express, MongoDB, SQL, REST API</p>
                 </div>
-                <!-- Group 4 -->
-                <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 skill-card">
-                    <i data-lucide="wrench" class="text-orange-400 mb-4"></i>
+                <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 skill-card text-center">
+                    <i data-lucide="wrench" class="text-orange-400 mb-4 mx-auto"></i>
                     <h3 class="font-bold mb-2">Инструменты</h3>
-                    <p class="text-sm text-slate-400">Git, VS Code, Android Studio, LLM, OOP/SOLID</p>
+                    <p class="text-sm text-slate-400 font-medium">Git, VS Code, Visual Studio (VS), SSMS, Android Studio, LLM, OOP/SOLID</p>
                 </div>
             </div>
         </div>
@@ -99,32 +123,31 @@
     <!-- Projects Section -->
     <section id="projects" class="py-20 bg-slate-800/50">
         <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12">Опыт реализации проектов</h2>
+            <h2 class="text-3xl font-bold mb-12 italic uppercase">Проектный опыт</h2>
             
-            <div class="bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden shadow-xl">
+            <div class="bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden shadow-2xl">
                 <div class="p-8">
                     <div class="flex flex-wrap justify-between items-start mb-6 gap-4">
                         <div>
                             <h3 class="text-2xl font-bold text-white">Проект «XFIT» (Система автоматизации)</h3>
                             <p class="text-blue-400">Fullstack Mobile Developer</p>
                         </div>
-                        <span class="bg-slate-800 text-slate-300 px-4 py-1 rounded-full text-sm border border-slate-700">
+                        <span class="bg-slate-800 text-slate-300 px-4 py-1 rounded-full text-xs border border-slate-700 uppercase tracking-wider">
                             Ноябрь 2025 — Февраль 2026
                         </span>
                     </div>
                     
-                    <ul class="space-y-3 text-slate-400 mb-8">
-                        <li class="flex gap-3"><i data-lucide="check-circle-2" class="text-green-500 shrink-0"></i> Разработал кроссплатформенное мобильное приложение на React Native + Expo.</li>
-                        <li class="flex gap-3"><i data-lucide="check-circle-2" class="text-green-500 shrink-0"></i> Спроектировал и реализовал Backend на Node.js (Express).</li>
-                        <li class="flex gap-3"><i data-lucide="check-circle-2" class="text-green-500 shrink-0"></i> Настроил хранение данных в MongoDB (Mongoose).</li>
-                        <li class="flex gap-3"><i data-lucide="check-circle-2" class="text-green-500 shrink-0"></i> Сократил время отклика на 40% за счет мгновенных уведомлений.</li>
+                    <ul class="space-y-4 text-slate-400 mb-8 text-sm md:text-base">
+                        <li class="flex gap-3"><i data-lucide="zap" class="text-yellow-500 shrink-0 w-5 h-5"></i> Разработал кроссплатформенное приложение на React Native + Expo, заменив Email-заявки.</li>
+                        <li class="flex gap-3"><i data-lucide="zap" class="text-yellow-500 shrink-0 w-5 h-5"></i> Спроектировал Backend на Node.js (Express) и БД MongoDB.</li>
+                        <li class="flex gap-3"><i data-lucide="zap" class="text-yellow-500 shrink-0 w-5 h-5"></i> Оптимизировал скорость обработки заявок на 40% через систему мгновенных статусов.</li>
                     </ul>
                     
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-blue-900/30 text-blue-400 px-3 py-1 rounded-md text-xs font-medium border border-blue-800/50">React Native</span>
-                        <span class="bg-blue-900/30 text-blue-400 px-3 py-1 rounded-md text-xs font-medium border border-blue-800/50">Node.js</span>
-                        <span class="bg-blue-900/30 text-blue-400 px-3 py-1 rounded-md text-xs font-medium border border-blue-800/50">MongoDB</span>
-                        <span class="bg-blue-900/30 text-blue-400 px-3 py-1 rounded-md text-xs font-medium border border-blue-800/50">Expo</span>
+                        <span class="bg-blue-900/20 text-blue-400 px-4 py-1 rounded-lg text-xs font-bold border border-blue-500/20">REACT NATIVE</span>
+                        <span class="bg-blue-900/20 text-blue-400 px-4 py-1 rounded-lg text-xs font-bold border border-blue-500/20">NODE.JS</span>
+                        <span class="bg-blue-900/20 text-blue-400 px-4 py-1 rounded-lg text-xs font-bold border border-blue-500/20">MONGODB</span>
+                        <span class="bg-blue-900/20 text-blue-400 px-4 py-1 rounded-lg text-xs font-bold border border-blue-500/20">EXPO</span>
                     </div>
                 </div>
             </div>
@@ -135,35 +158,29 @@
     <section class="py-20">
         <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12">
             <div>
-                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-                    <i data-lucide="graduation-cap" class="text-blue-400"></i> Образование
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3 italic">
+                    <i data-lucide="graduation-cap" class="text-blue-400"></i> ОБРАЗОВАНИЕ
                 </h2>
-                <div class="border-l-2 border-slate-700 pl-6">
-                    <p class="font-bold text-white uppercase tracking-wider text-sm">Окончание: 2026</p>
+                <div class="border-l-2 border-blue-500/50 pl-6">
+                    <p class="font-bold text-white uppercase tracking-wider text-xs">Выпуск: 2026</p>
                     <p class="text-lg mt-1 font-semibold">Информационные системы и программирование</p>
-                    <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+                    <p class="text-slate-400 text-sm mt-2">
                         ГБПОУ «Колледж автоматизации и информационных технологий № 20», г. Москва
                     </p>
                 </div>
             </div>
             <div>
-                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-                    <i data-lucide="languages" class="text-blue-400"></i> Языки
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3 italic">
+                    <i data-lucide="languages" class="text-blue-400"></i> ЯЗЫКИ
                 </h2>
-                <div class="space-y-4">
-                    <div class="flex justify-between items-center">
-                        <span>Русский</span>
-                        <span class="text-blue-400 font-bold">Родной</span>
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between text-sm mb-2"><span>Русский</span><span class="text-blue-400">Родной</span></div>
+                        <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-blue-500 w-full"></div></div>
                     </div>
-                    <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-                        <div class="bg-blue-500 h-full w-full"></div>
-                    </div>
-                    <div class="flex justify-between items-center mt-4">
-                        <span>Английский</span>
-                        <span class="text-blue-400 font-bold">A2 (Pre-Intermediate)</span>
-                    </div>
-                    <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-                        <div class="bg-blue-500 h-full w-[40%]"></div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-2"><span>Английский</span><span class="text-blue-400 font-bold">A2 (Technical)</span></div>
+                        <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-blue-500 w-[45%]"></div></div>
                     </div>
                 </div>
             </div>
@@ -171,22 +188,26 @@
     </section>
 
     <!-- Contact Footer -->
-    <footer id="contact" class="py-20 border-t border-slate-800 text-center">
+    <footer id="contact" class="py-20 border-t border-slate-800 text-center bg-slate-900">
         <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-4 italic">Свяжитесь со мной</h2>
-            <p class="text-slate-400 mb-8">Готов к удаленной работе и новым интересным вызовам</p>
+            <h2 class="text-4xl font-black mb-8 italic uppercase tracking-tighter">Свяжитесь со мной</h2>
             
-            <div class="flex flex-col items-center gap-4 text-lg">
-                <a href="tel:+79651883852" class="hover:text-blue-400 transition flex items-center gap-2">
-                    <i data-lucide="phone" class="w-5 h-5 text-blue-500"></i> +7 (965) 188-38-52
-                </a>
-                <p class="flex items-center gap-2">
-                    <i data-lucide="map-pin" class="w-5 h-5 text-blue-500"></i> Витебск / Удаленно
-                </p>
+            <div class="grid md:grid-cols-2 gap-8 mb-16 text-lg max-w-2xl mx-auto">
+                <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700">
+                    <p class="text-slate-500 text-sm uppercase font-bold mb-2 tracking-widest">Локация</p>
+                    <p class="flex items-center justify-center gap-2">
+                        <i data-lucide="map-pin" class="text-blue-500"></i> Витебск / Удаленно
+                    </p>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700">
+                    <p class="text-slate-500 text-sm uppercase font-bold mb-2 tracking-widest">Телефоны</p>
+                    <a href="tel:+79651883852" class="block hover:text-blue-400 transition mb-1">+7 (965) 188-38-52</a>
+                    <a href="tel:+375255225128" class="block hover:text-blue-400 transition">+375 (25) 522-51-28</a>
+                </div>
             </div>
             
-            <p class="mt-20 text-xs text-slate-500 uppercase tracking-widest">
-                &copy; 2024 Dovzhenko Yaroslav. Built with React Native Spirit.
+            <p class="text-xs text-slate-600 uppercase tracking-[0.3em]">
+                Dovzhenko Yaroslav | Mobile Developer Portfolio 2024
             </p>
         </div>
     </footer>
@@ -194,6 +215,33 @@
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
+
+        // Modal Logic
+        function openModal(title, value, iconName) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalValue').innerText = value;
+            const iconDiv = document.getElementById('modalIcon');
+            iconDiv.innerHTML = `<i data-lucide="${iconName}" class="w-12 h-12"></i>`;
+            lucide.createIcons();
+            document.getElementById('contactModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('contactModal').classList.remove('active');
+        }
+
+        function copyModalValue() {
+            const val = document.getElementById('modalValue').innerText;
+            navigator.clipboard.writeText(val);
+            const btn = event.currentTarget;
+            const originalHtml = btn.innerHTML;
+            btn.innerHTML = 'Скопировано!';
+            btn.classList.replace('bg-blue-600', 'bg-green-600');
+            setTimeout(() => {
+                btn.innerHTML = originalHtml;
+                btn.classList.replace('bg-green-600', 'bg-blue-600');
+            }, 2000);
+        }
     </script>
 </body>
 </html>
