@@ -513,7 +513,7 @@
                 <i data-lucide="user" class="text-blue-400"></i> Обо мне
             </h2>
             <p class="text-body text-slate-300 leading-relaxed">
-                Мобильный разработчик со специализацией на кроссплатформенных приложениях (React Native). Имею проектный опыт Fullstack разработки: от проектирования архитектуры и базы данных до создания UI и внедрения Backend-логики. Так же имею опыт разработки десктопных приложений на C# и real-time веб-приложений на Node.js + Socket.IO. Умею превращать бизнес-задачи в работающий код. Увлекаюсь современными технологиями, пишу чистый и поддерживаемый код.
+                Мобильный и backend-разработчик со специализацией на кроссплатформенных приложениях (React Native) и AI-решениях (Telegram-боты, LLM API). Имею проектный опыт Fullstack разработки: от проектирования архитектуры и базы данных до создания UI и внедрения Backend-логики. Разрабатывал десктопные приложения на C#, real-time веб-приложения на Node.js + Socket.IO и интеллектуальных Telegram-ботов на Python. Умею превращать бизнес-задачи в работающий код. Увлекаюсь современными технологиями, пишу чистый и поддерживаемый код.
             </p>
         </div>
     </section>
@@ -526,7 +526,7 @@
                 <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 skill-card text-center reveal-left">
                     <i data-lucide="code-2" class="text-blue-400 mb-4 mx-auto"></i>
                     <h3 class="font-bold mb-2">Языки</h3>
-                    <p class="text-body text-slate-400">JavaScript, TypeScript, C#, Kotlin</p>
+                    <p class="text-body text-slate-400">JavaScript, TypeScript, C#, Kotlin, Python</p>
                 </div>
                 <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 skill-card text-center reveal-left" style="transition-delay:0.1s">
                     <i data-lucide="smartphone" class="text-purple-400 mb-4 mx-auto"></i>
@@ -541,7 +541,7 @@
                 <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 skill-card text-center reveal-right">
                     <i data-lucide="wrench" class="text-orange-400 mb-4 mx-auto"></i>
                     <h3 class="font-bold mb-2">Инструменты</h3>
-                    <p class="text-body text-slate-400 font-medium">Git, VS Code, VS, SSMS, Android Studio, LLM, OOP/SOLID</p>
+                    <p class="text-body text-slate-400 font-medium">Git, VS Code, VS, SSMS, Docker, LLM/API, OOP/SOLID</p>
                 </div>
             </div>
         </div>
@@ -628,7 +628,7 @@
             </div>
 
             <!-- poker-for-friends -->
-            <div class="bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden shadow-2xl reveal project-card glow-border">
+            <div class="bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden shadow-2xl mb-8 reveal project-card glow-border">
                 <div class="p-8">
                     <div class="flex flex-wrap justify-between items-start mb-6 gap-4">
                         <div>
@@ -654,6 +654,40 @@
                             <span class="bg-slate-800 text-slate-400 px-3 py-1 rounded-lg text-small font-bold border border-slate-700">NODE.JS</span>
                             <span class="bg-slate-800 text-slate-400 px-3 py-1 rounded-lg text-small font-bold border border-slate-700">SOCKET.IO</span>
                             <span class="bg-slate-800 text-slate-400 px-3 py-1 rounded-lg text-small font-bold border border-slate-700">VANILLA JS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rubi AI Bot -->
+            <div class="bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden shadow-2xl reveal project-card glow-border">
+                <div class="p-8">
+                    <div class="flex flex-wrap justify-between items-start mb-6 gap-4">
+                        <div>
+                            <h3 class="text-heading font-bold text-white">Проект «Rubi AI Bot» (Telegram-ассистент)</h3>
+                            <p class="text-violet-400 font-bold uppercase text-small tracking-widest mt-1">Python AI Developer</p>
+                        </div>
+                        <span class="bg-slate-800 text-slate-400 px-4 py-1 rounded-full text-small border border-slate-700 uppercase tracking-widest">
+                            v1.2.1 | Июнь 2026
+                        </span>
+                    </div>
+                    
+                    <ul class="space-y-3 text-slate-400 mb-8 text-body">
+                        <li class="flex gap-3"><i data-lucide="zap" class="text-violet-500 shrink-0 w-5 h-5"></i> Разработка Telegram-бота @rubiaibot на Python + aiogram с личностью и эмодзи.</li>
+                        <li class="flex gap-3"><i data-lucide="zap" class="text-violet-500 shrink-0 w-5 h-5"></i> Распознавание голоса на сервере (faster-whisper tiny) — нулевая стоимость API.</li>
+                        <li class="flex gap-3"><i data-lucide="zap" class="text-violet-500 shrink-0 w-5 h-5"></i> Анализ изображений, контекст диалога в SQLite, авто-деплой на Railway.</li>
+                    </ul>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+                        <button onclick="openProjectModal4()" class="bg-violet-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-violet-500 transition shadow-lg flex items-center gap-2 text-body uppercase italic">
+                            <i data-lucide="eye" class="w-4 h-4"></i> Подробнее
+                        </button>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-slate-800 text-slate-400 px-3 py-1 rounded-lg text-small font-bold border border-slate-700">PYTHON</span>
+                            <span class="bg-slate-800 text-slate-400 px-3 py-1 rounded-lg text-small font-bold border border-slate-700">AIOGRAM</span>
+                            <span class="bg-slate-800 text-slate-400 px-3 py-1 rounded-lg text-small font-bold border border-slate-700">OPENAI</span>
+                            <span class="bg-slate-800 text-slate-400 px-3 py-1 rounded-lg text-small font-bold border border-slate-700">WHISPER</span>
+                            <span class="bg-slate-800 text-slate-400 px-3 py-1 rounded-lg text-small font-bold border border-slate-700">RAILWAY</span>
                         </div>
                     </div>
                 </div>
@@ -693,6 +727,97 @@
             </div>
         </div>
     </section>
+
+    <!-- Project Detail Modal (Rubi AI Bot) -->
+    <div id="projectModal4" class="modal" onclick="closeModal('projectModal4')">
+        <div class="bg-slate-800 rounded-3xl border border-slate-700 project-modal-content shadow-2xl" onclick="event.stopPropagation()">
+            <div class="sticky top-0 bg-slate-800 p-6 border-b border-slate-700 flex justify-between items-center z-10">
+                <h2 class="text-heading font-bold text-white">Кейс: Telegram AI Bot «Rubi»</h2>
+                <button onclick="closeModal('projectModal4')" class="p-2 hover:bg-slate-700 rounded-full transition">
+                    <i data-lucide="x" class="text-slate-400"></i>
+                </button>
+            </div>
+            
+            <div class="p-6 md:p-8">
+                <h3 class="text-heading font-bold mb-6 text-violet-400 flex items-center gap-2 italic uppercase">
+                    <i data-lucide="message-square" class="w-5 h-5"></i> Скриншоты интерфейса
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+                    <div class="space-y-2"><img src="rubi_1.jpg" class="rounded-xl border border-slate-700 w-full shadow-lg" onerror="this.src='https://placehold.co/300x600/1e293b/A78BFA?text=Hello+Rubi'"><p class="text-small text-center text-slate-500 uppercase italic">Приветствие бота</p></div>
+                    <div class="space-y-2"><img src="rubi_2.jpg" class="rounded-xl border border-slate-700 w-full shadow-lg" onerror="this.src='https://placehold.co/300x600/1e293b/A78BFA?text=Chat+Dialog'"><p class="text-small text-center text-slate-500 uppercase italic">Диалог с Руби</p></div>
+                    <div class="space-y-2"><img src="rubi_3.jpg" class="rounded-xl border border-slate-700 w-full shadow-lg" onerror="this.src='https://placehold.co/300x600/1e293b/A78BFA?text=Photo+Analysis'"><p class="text-small text-center text-slate-500 uppercase italic">Анализ фото</p></div>
+                    <div class="space-y-2"><img src="rubi_4.jpg" class="rounded-xl border border-slate-700 w-full shadow-lg" onerror="this.src='https://placehold.co/300x600/1e293b/A78BFA?text=Voice+Recognition'"><p class="text-small text-center text-slate-500 uppercase italic">Распознавание голоса</p></div>
+                </div>
+
+                <div class="mt-12 space-y-10 text-slate-300">
+                    <div class="flex items-center gap-4">
+                        <div class="h-px bg-slate-700 grow"></div>
+                        <h4 class="text-heading font-black text-white italic uppercase tracking-[0.2em] shrink-0">Технический отчет</h4>
+                        <div class="h-px bg-slate-700 grow"></div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-slate-900/40 p-6 rounded-2xl border border-slate-700/50 shadow-inner">
+                            <div class="flex items-center gap-3 mb-4 text-violet-400">
+                                <i data-lucide="target" class="w-6 h-6"></i>
+                                <h5 class="font-bold uppercase tracking-tight text-white">Задача и контекст</h5>
+                            </div>
+                            <p class="text-body leading-relaxed text-slate-400">
+                                Разработка интеллектуального Telegram-бота с проработанной личностью: текстовые диалоги, анализ изображений, распознавание голосовых сообщений. Требовалось создать дружелюбного AI-ассистента с нулевой стоимостью эксплуатации.
+                                <br><br>
+                                <span class="text-white italic">Цель:</span> Запустить production-ready бота с авто-деплоем и полной омниканальностью (текст, фото, голос).
+                            </p>
+                        </div>
+
+                        <div class="bg-slate-900/40 p-6 rounded-2xl border border-slate-700/50 shadow-inner">
+                            <div class="flex items-center gap-3 mb-4 text-violet-400">
+                                <i data-lucide="cpu" class="w-6 h-6"></i>
+                                <h5 class="font-bold uppercase tracking-tight text-white">Технологический стек</h5>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-purple-500/10 text-purple-400 px-3 py-1 rounded-md text-small font-bold border border-purple-500/20">PYTHON</span>
+                                <span class="bg-blue-500/10 text-blue-400 px-3 py-1 rounded-md text-small font-bold border border-blue-500/20">AIOGRAM</span>
+                                <span class="bg-green-500/10 text-green-400 px-3 py-1 rounded-md text-small font-bold border border-green-500/20">OPENAI API</span>
+                                <span class="bg-yellow-500/10 text-yellow-400 px-3 py-1 rounded-md text-small font-bold border border-yellow-500/20">FASTER-WHISPER</span>
+                                <span class="bg-slate-700/50 text-slate-300 px-3 py-1 rounded-md text-small font-bold border border-slate-600">SQLITE</span>
+                                <span class="bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-md text-small font-bold border border-cyan-500/20">FFMPEG</span>
+                                <span class="bg-slate-700/50 text-slate-300 px-3 py-1 rounded-md text-small font-bold border border-slate-600">DOCKER</span>
+                                <span class="bg-orange-500/10 text-orange-400 px-3 py-1 rounded-md text-small font-bold border border-orange-500/20">RAILWAY</span>
+                            </div>
+                            <p class="mt-4 text-body text-white">
+                                Локальное распознавание речи через faster-whisper tiny — нулевая стоимость API, полная автономия на Railway.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8 border-t border-slate-700/30 pt-8">
+                        <div class="space-y-4">
+                            <h5 class="text-white font-bold uppercase tracking-widest flex items-center gap-2 text-small">
+                                <i data-lucide="zap" class="w-4 h-4 text-yellow-500"></i> Функционал
+                            </h5>
+                            <ul class="space-y-2 text-body text-slate-400">
+                                <li class="flex items-start gap-2"><span class="text-violet-400">•</span> Личность Руби: красноволосая девушка с фиолетовыми глазами, общение с эмодзи.</li>
+                                <li class="flex items-start gap-2"><span class="text-violet-400">•</span> Обработка фото через OpenRouter (модели с vision).</li>
+                                <li class="flex items-start gap-2"><span class="text-violet-400">•</span> Голос: OGG → WAV (ffmpeg) → faster-whisper tiny (offline).</li>
+                                <li class="flex items-start gap-2"><span class="text-violet-400">•</span> Контекст диалога в SQLite (персистентность между рестартами).</li>
+                                <li class="flex items-start gap-2"><span class="text-violet-400">•</span> Авто-деплой на Railway из GitHub, Docker-образ с ffmpeg.</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-4">
+                            <h5 class="text-white font-bold uppercase tracking-widest flex items-center gap-2 text-small">
+                                <i data-lucide="trending-up" class="w-4 h-4 text-green-500"></i> Результат
+                            </h5>
+                            <div class="bg-green-500/5 border-l-4 border-green-500 p-4 rounded-r-xl">
+                                <p class="text-body text-green-100/90 leading-relaxed font-medium">
+                                    Работающий Telegram-бот <span class="text-green-400 font-bold">@rubiaibot</span> в продакшене. Нулевая стоимость распознавания речи. Версия <span class="text-green-400 font-bold">1.2.1</span>. Полная омниканальность: текст, фото, голос — в едином диалоге с контекстом.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer id="contact" class="py-20 border-t border-slate-800 text-center bg-slate-900">
@@ -759,6 +884,11 @@
 
         function openProjectModal3() {
             document.getElementById('projectModal3').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function openProjectModal4() {
+            document.getElementById('projectModal4').classList.add('active');
             document.body.style.overflow = 'hidden';
         }
 
